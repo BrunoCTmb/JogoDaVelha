@@ -5,7 +5,7 @@ class Lay:
         surf.fill((40,40,40))
 
     def bg_canvas(self,surf):
-        bg_game = pygame.draw.rect(surf, 'white', (150,100,340,280)) #size - 190
+        #bg_game = pygame.draw.rect(surf, 'white', (150,100,340,280)) #size - 190
         bg_title = pygame.draw.rect(surf, (30,30,30), (250,25, 140, 50))
 
 
@@ -23,7 +23,12 @@ class Lay:
         final_text = font.render(msg, True, color)
         return final_text
 
+    def put(self,surf,pos_x,pos_y):
+        one = self.text('X', 80, (200,210,190))
+        surf.blit(one, (pos_x,pos_y))
+
     def run(self,surface):
         self.bg_canvas(surface)
         self.bg_lines(surface)
+        #self.put(surface)
 
